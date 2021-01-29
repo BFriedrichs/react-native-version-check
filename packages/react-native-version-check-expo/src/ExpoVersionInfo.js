@@ -17,12 +17,7 @@ if (process.env.RNVC_ENV === 'test') {
     android: { versionCode = null, package: androidPackageName = null } = {},
     ios: { bundleIdentifier = null, buildNumber = null } = {},
   } = manifest;
-  let country;
-  if (Constants.expoVersion < 31) {
-    country = Localization.getCurrentDeviceCountryAsync();
-  } else {
-    country = Localization.country;
-  }
+  const country = Localization.country;
 
   RNVersionCheck = {
     currentVersion: version,
